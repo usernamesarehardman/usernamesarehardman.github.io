@@ -58,8 +58,7 @@ tmp/
 # Images
 *.psd
 *.xcf
-*.png
-*.jpg
+*.pdf
 
 # Backup files
 *.bak

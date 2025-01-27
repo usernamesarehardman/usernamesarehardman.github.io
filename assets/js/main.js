@@ -9,17 +9,14 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Back to top button
-let backToTopButton = document.createElement('button');
-backToTopButton.innerText = 'Back to Top';
-backToTopButton.classList.add('back-to-top');
-document.body.appendChild(backToTopButton);
+// Back to Top Button Functionality
+const backToTopButton = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
+        backToTopButton.classList.add('visible');
     } else {
-        backToTopButton.style.display = 'none';
+        backToTopButton.classList.remove('visible');
     }
 });
 
@@ -37,4 +34,23 @@ document.querySelector('.floating-contact-button').addEventListener('click', fun
     } else {
         form.style.display = 'none';  // Hide the form
     }
+});
+
+// Testing pannign nav bar
+let lastScrollPosition = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition > lastScrollPosition) {
+        // User is scrolling down, hide the navbar
+        header.style.transform = `translateY(-100%)`;
+    } else {
+        // User is scrolling up, show the navbar
+        header.style.transform = `translateY(0)`;
+    }
+
+    // Update lastScrollPosition for the next scroll event
+    lastScrollPosition = currentScrollPosition;
 });

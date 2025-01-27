@@ -18,6 +18,19 @@ header {
     z-index: 1000;
 }
 
+/* Nav bar*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 10px 20px;
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
 nav a {
     color: white;
     text-decoration: none;
@@ -66,12 +79,12 @@ button, .button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover, .button:hover {
+button:hover, .button:hover , .cta-button:hover {
     background-color: #66c2ff;
     transform: translateY(-2px);
 }
 
-button:active, .button:active {
+button:active, .button:active , .cta-button:active {
     transform: translateY(1px);
 }
 
@@ -127,7 +140,7 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* Floating Contact Form (Initially Hidden) */
+/* Floating Contact Form */
 .floating-contact-form {
     position: fixed;
     bottom: 80px;
@@ -142,7 +155,6 @@ form button:hover {
     transition: all 0.3s ease;
 }
 
-/* Ensure inputs, textarea, and button are aligned */
 .floating-contact-form input,
 .floating-contact-form textarea,
 .floating-contact-form button {
@@ -150,19 +162,17 @@ form button:hover {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-sizing: border-box; /* Include padding/border in width calculation */
-    background-color: #333; /* Set background color to match the dark theme */
-    color: #e0e0e0; /* Text color for better contrast */
+    box-sizing: border-box;
+    background-color: #333;
+    color: #e0e0e0;
 }
 
-/* Remove margin issues */
 .floating-contact-form input,
 .floating-contact-form textarea {
     margin-left: 0;
     margin-right: 0;
 }
 
-/* Specific styles for the button */
 .floating-contact-form button {
     background-color: #007bff;
     color: white;
@@ -174,10 +184,9 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* Specific styles for textarea */
 .floating-contact-form textarea {
-    height: 120px; /* Fixed height */
-    resize: none; /* Disable resizing */
+    height: 120px;
+    resize: none;
 }
 
 /* Floating Contact Button (SMS Icon) */
@@ -200,25 +209,34 @@ form button:hover {
     background-color: #0056b3;
 }
 
-/* back-to-top button */
+/* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 75px;
-    left: 50%; /* Position the button at 50% from the left */
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    bottom: 90px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    display: none; /* Initially hidden */
-    text-align: center;
-    width: auto; /* Keep the width consistent */
-    margin-left: -50px; /* Adjust the margin to center the button properly */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
 }
 
 .back-to-top:hover {
+    transform: scale(1.1);
     background-color: #0056b3;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Footer */
@@ -232,6 +250,7 @@ footer {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
+    text-align: center;
 }
 
 .social-links a:hover {
@@ -248,4 +267,35 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
     color: #66c2ff;
+}
+
+/* Testing Docuviewer */
+.resume {
+    padding: 20px;
+    max-width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 80vh; /* Adjust the height to fit your needs */
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.download-link {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
 }
