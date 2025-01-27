@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Your Name</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,9 +26,34 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 16 12 8 18 16"></polyline>
+        </svg>
+    </button>
+
+    <!-- Floating Contact Button (SMS Icon) -->
+    <div class="floating-contact-button">
+        <i class="fas fa-comment"></i> <!-- Font Awesome SMS Icon -->
+    </div>
+
+    <!-- Floating Contact Form (Initially hidden) -->
+    <div class="floating-contact-form">
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 William Freeman. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">GitHub</a>

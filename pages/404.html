@@ -13,7 +13,9 @@
         </nav>
     </header>
 
-    <!--Insert a reference to Obi-Wan Kenobi here-->
+    <section>
+        <h2>"These aren't the droids you're looking for." - Obi-Wan Kenobi</h2>
+    </section>
     <section>
         <h1>404 Error - Oops! Page Not Found</h1>
         <p>The page you're looking for doesn't exist.</p>
@@ -21,7 +23,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 William Freeman. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
     </footer>
 </body>
 </html>

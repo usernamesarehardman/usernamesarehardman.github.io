@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William Freeman - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -22,21 +22,20 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <img src="../assets/img/headshot.jpg" alt="William Freeman">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Building Solutions, one line of code at a time</p>
+        <img src="assets/img/headshot.jpg" alt="William Freeman">
+        <h1>Welcome to My Website</h1>
+        <p>Building solutions, one line of code at a time</p>
         <a href="pages/portfolio.html" class="cta-button">View My Work</a>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Computer science student. McNair Scholars Program. I love working with computers. Excellent people and office skills. I am seeking a full-time position to provide my skills in a natural work environment.
-
-            - Intermediate programming skills in Python, C/C++, Bash, and SQL
-            - Extensive experience with Microsoft suite
-            - Problem solver; Initiative 
-            - Learner mindset</p>
+        <p>Cybersecurity student at the University of Oklahoma | McNair Scholar</p>
+        <p>- Intermediate programming skills including Python, C/C++, Bash, HTML, CSS, and SQL</p>
+        <p>- Problem solver</p>
+        <p>- Strong initiative</p>
+        <p>- Learner mindset</p>
         <a href="pages/about.html" class="cta-button">Learn More About Me</a>
     </section>
 
@@ -94,14 +93,16 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 William Freeman. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://example.com/youraccounthandle" target="_blank" rel="noopener noreferrer">Placeholder</a>
         </div>
     </footer>
-
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>
