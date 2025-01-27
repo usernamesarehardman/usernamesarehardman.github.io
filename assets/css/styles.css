@@ -1,0 +1,251 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.cta-button {
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Buttons - NEW */
+button, .button {
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #66c2ff;
+    transform: translateY(-2px);
+}
+
+button:active, .button:active {
+    transform: translateY(1px);
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Contact Form */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Floating Contact Button (SMS Icon) */
+.floating-contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.floating-contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Floating Contact Form (Initially Hidden) */
+.floating-contact-form {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    display: none; /* Initially hidden */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    transition: all 0.3s ease;
+}
+
+/* Ensure inputs, textarea, and button are aligned */
+.floating-contact-form input,
+.floating-contact-form textarea,
+.floating-contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    background-color: #333; /* Set background color to match the dark theme */
+    color: #e0e0e0; /* Text color for better contrast */
+}
+
+/* Remove margin issues */
+.floating-contact-form input,
+.floating-contact-form textarea {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Specific styles for the button */
+.floating-contact-form button {
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.floating-contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Specific styles for textarea */
+.floating-contact-form textarea {
+    height: 120px; /* Fixed height */
+    resize: none; /* Disable resizing */
+}
+
+/* Floating Contact Button (SMS Icon) */
+.floating-contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 12px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.floating-contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* back-to-top button */
+.back-to-top {
+    position: fixed;
+    bottom: 75px;
+    left: 50%; /* Position the button at 50% from the left */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    text-align: center;
+    width: auto; /* Keep the width consistent */
+    margin-left: -50px; /* Adjust the margin to center the button properly */
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Social Footer Icons - NEW */
+footer .social-icons a {
+    margin: 0 15px;
+    font-size: 25px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #66c2ff;
+}
