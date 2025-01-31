@@ -3,7 +3,7 @@
 # It also ignores files that are hidden on Unix-like systems and the Thumbs.db file on Windows.
 
 # Backend testing
-legacy/
+testing/
 
 # Node.js dependencies
 node_modules/
