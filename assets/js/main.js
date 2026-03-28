@@ -1,72 +1,106 @@
-// Smooth Scrolling for navbar links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const linkUrl = new URL(this.href, window.location.href); // Get absolute URL
-        const currentPageUrl = new URL(window.location.href); // Get current page URL
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+const navbar    = document.getElementById('navbar');
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
 
-        if (linkUrl.origin === currentPageUrl.origin && linkUrl.pathname === currentPageUrl.pathname && linkUrl.hash) {
-            e.preventDefault(); // Stop default link behavior
+// Scrolled class for backdrop blur
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 
-            const section = document.querySelector(linkUrl.hash); // Select section
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll
-            } else {
-                console.warn('Section not found for hash:', linkUrl.hash);
-            }
-        } else {
-            // Allow default behavior for different page links
-            console.log(`Navigating to different page: ${linkUrl.href}`);
-        }
+// Mobile menu
+if (navToggle && navLinks) {
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+        navLinks.classList.add('open');
+        overlay.classList.add('visible');
+        navToggle.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        navLinks.classList.remove('open');
+        overlay.classList.remove('visible');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.contains('open') ? closeMenu() : openMenu();
     });
-});
 
-// Back to Top Button Functionality
-const backToTopButton = document.getElementById('backToTop');
+    overlay.addEventListener('click', closeMenu);
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
+    });
+}
 
-// Toggle visibility of the floating contact form
-document.querySelector('.floating-contact-button').addEventListener('click', function() {
-    var form = document.querySelector('.floating-contact-form');
-    
-    // Toggle form visibility
-    if (form.style.display === 'none' || form.style.display === '') {
-        form.style.display = 'block';  // Show the form
-    } else {
-        form.style.display = 'none';  // Hide the form
-    }
-});
+/* ============================================================
+   ACTIVE NAV LINK ON SCROLL
+   ============================================================ */
+const sections   = document.querySelectorAll('section[id]');
+const navLinkEls = document.querySelectorAll('.nav-link');
 
-// Nav bar hide on scroll down, show on scroll up
-let lastScrollPosition = 0;
-const header = document.querySelector('header');
-let ticking = false;
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const currentScrollPosition = window.scrollY;
-
-            if (currentScrollPosition > lastScrollPosition) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
+if (sections.length && navLinkEls.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinkEls.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
             }
-
-            lastScrollPosition = currentScrollPosition;
-            ticking = false;
         });
+    }, { threshold: 0.35 });
 
-        ticking = true;
-    }
-});
+    sections.forEach(s => sectionObserver.observe(s));
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+const backToTop = document.getElementById('backToTop');
+
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+/* ============================================================
+   SCROLL FADE-IN ANIMATIONS
+   ============================================================ */
+const fadeEls = document.querySelectorAll('.fade-in');
+
+if (fadeEls.length) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => fadeObserver.observe(el));
+}
+
+/* ============================================================
+   FOOTER YEAR
+   ============================================================ */
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
