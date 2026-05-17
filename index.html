@@ -3,106 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Freeman - Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="William Freeman — Cybersecurity Student & Developer at the University of Oklahoma">
+    <title>William Freeman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Header / Navigation -->
-    <header>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#resume">Resume</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+
+    <!-- Navigation -->
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="#home" class="nav-logo">WF</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about"    class="nav-link">About</a></li>
+                <li><a href="#skills"   class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#resume"   class="nav-link">Resume</a></li>
+                <li><a href="#contact"  class="nav-link">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
-        <img src="assets/img/headshot.jpg" alt="William Freeman">
-        <h1>Welcome to My Website</h1>
-        <p>Building solutions, one line of code at a time</p>
-        <a href="pages/portfolio.html" class="cta-button">View My Work</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Cybersecurity student at the University of Oklahoma | McNair Scholar</p>
-        <p>- Intermediate programming skills including Python, C/C++, Bash, HTML, CSS, and SQL</p>
-        <p>- Problem solver</p>
-        <p>- Strong initiative</p>
-        <p>- Learner mindset</p>
-        <a href="pages/about.html" class="cta-button">Learn More About Me</a>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            <!-- Portfolio items -->
+        <div class="hero-content">
+            <p class="hero-greeting">Hi, my name is</p>
+            <h1 class="hero-name">William Freeman.</h1>
+            <h2 class="hero-tagline">Cybersecurity Student &amp; Developer.</h2>
+            <p class="hero-description">
+                I'm a cybersecurity student at the <span class="accent">University of Oklahoma</span>
+                and a <span class="accent">McNair Scholar</span>, focused on building secure systems
+                and exploring the ever-evolving landscape of information security.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+            </div>
         </div>
-        <a href="pages/portfolio.html" class="cta-button">View Full Portfolio</a>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume">
-        <h2>Resume</h2>
-        <p>Check out my professional resume for more details on my career background, experience, and education.</p>
-        <a href="pages/resume.html" class="cta-button">View Resume</a>
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-num">01.</span> About Me
+            </h2>
+            <div class="about-grid fade-in">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm William, a cybersecurity student passionate about understanding how
+                        systems work — and how they can be broken. As a
+                        <span class="accent">McNair Scholar</span> at the
+                        <span class="accent">University of Oklahoma</span>, I'm committed to academic
+                        excellence and research in the security space.
+                    </p>
+                    <p>
+                        My technical background spans multiple languages and paradigms. I enjoy building
+                        tools, tackling security challenges, and continuously pushing the boundaries of
+                        what I know — with a learner mindset that keeps me growing.
+                    </p>
+                    <p>Technologies I've been working with recently:</p>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>C / C++</li>
+                        <li>Bash / Shell</li>
+                        <li>SQL</li>
+                        <li>HTML &amp; CSS</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="about-image-container">
+                        <img src="assets/img/headshot.jpg" alt="William Freeman" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>What Others Say</h2>
-        <p>Read what my colleagues and clients have said about working with me.</p>
-        <a href="pages/testimonials.html" class="cta-button">Read Testimonials</a>
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-num">02.</span> Skills
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C / C++</li>
+                        <li>Bash Scripting</li>
+                        <li>SQL</li>
+                        <li>HTML / CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>Network Security</li>
+                        <li>Vulnerability Assessment</li>
+                        <li>CTF Competitions</li>
+                        <li>Threat Analysis</li>
+                        <li>Secure Coding</li>
+                    </ul>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>Tools &amp; Platforms</h3>
+                    <ul>
+                        <li>Linux / Unix</li>
+                        <li>Git / GitHub</li>
+                        <li>Wireshark</li>
+                        <li>Kali Linux</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you would like to reach out or collaborate, feel free to get in touch!</p>
-        <a href="pages/contact.html" class="cta-button">Contact Me</a>
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">
+                <span class="section-num">03.</span> Projects
+            </h2>
+            <div class="projects-grid">
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        Brief description of a notable project. What problem does it solve? What did you
+                        build, and what impact did it have? Replace this with your real work.
+                    </p>
+                    <footer class="project-footer">
+                        <span>Python</span>
+                        <span>Linux</span>
+                        <span>Security</span>
+                    </footer>
+                </article>
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        Highlight the technical challenges you overcame and the skills you developed or
+                        applied. Consider CTF write-ups, security tools, or research projects.
+                    </p>
+                    <footer class="project-footer">
+                        <span>C++</span>
+                        <span>Networking</span>
+                        <span>Bash</span>
+                    </footer>
+                </article>
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        A third notable project. This could be academic research, a personal tool, or
+                        anything else you're proud to show off.
+                    </p>
+                    <footer class="project-footer">
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>HTML/CSS</span>
+                    </footer>
+                </article>
+
+            </div>
+            <div class="projects-more fade-in">
+                <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    More on GitHub &nbsp;<i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 16 12 8 18 16"></polyline>
-        </svg>
-    </button>
+    <!-- Resume -->
+    <section id="resume" class="section section-alt">
+        <div class="container resume-section">
+            <h2 class="section-title fade-in">
+                <span class="section-num">04.</span> Resume
+            </h2>
+            <p class="resume-desc fade-in">
+                Want the full picture? My resume covers education, experience, and certifications.
+            </p>
+            <a href="assets/img/William Freeman Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary fade-in">
+                <i class="fas fa-file-pdf"></i>&nbsp; View Resume
+            </a>
+        </div>
+    </section>
 
-    <!-- Floating Contact Button (SMS Icon) -->
-    <div class="floating-contact-button">
-        <i class="fas fa-comment"></i> <!-- Font Awesome SMS Icon -->
-    </div>
-
-    <!-- Floating Contact Form (Initially hidden) -->
-    <div class="floating-contact-form">
-        <form action="process.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title fade-in">
+                <span class="section-num">05.</span> Get In Touch
+            </h2>
+            <p class="contact-desc fade-in">
+                I'm currently looking for new opportunities and always open to interesting conversations.
+                Whether you have a question, want to collaborate, or just want to say hi — reach out!
+            </p>
+            <div class="contact-links fade-in">
+                <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:placeholder@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Me</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
-        <script>
-            document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://example.com/youraccounthandle" target="_blank" rel="noopener noreferrer">Placeholder</a>
-        </div>
+    <footer class="site-footer">
+        <p>Designed &amp; Built by <span class="accent">William Freeman</span></p>
+        <p class="footer-sub">
+            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            &nbsp;&copy; <span id="year"></span>
+        </p>
     </footer>
-    <script src="/assets/js/main.js"></script>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

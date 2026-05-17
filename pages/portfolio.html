@@ -3,64 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Your Name</title>
+    <meta name="description" content="Projects by William Freeman — Cybersecurity Student & Developer">
+    <title>Projects — William Freeman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="resume.html">Resume</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="contact.html">Contact</a>
+
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-logo">WF</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#about"    class="nav-link">About</a></li>
+                <li><a href="../index.html#skills"   class="nav-link">Skills</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="resume.html"            class="nav-link">Resume</a></li>
+                <li><a href="contact.html"           class="nav-link">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            <!-- Portfolio items -->
-        </div>
-    </section>
+    <main class="page-wrapper">
+        <div class="container page-section">
+            <h1 class="section-title fade-in">
+                <span class="section-num">03.</span> Projects
+            </h1>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 16 12 8 18 16"></polyline>
-        </svg>
+            <div class="projects-grid">
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        Brief description of a notable project. What problem does it solve?
+                        What did you build, and what impact did it have? Replace this with your real work.
+                    </p>
+                    <footer class="project-footer">
+                        <span>Python</span>
+                        <span>Linux</span>
+                        <span>Security</span>
+                    </footer>
+                </article>
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        Highlight the technical challenges you overcame and the skills you developed.
+                        Consider including CTF write-ups, security tools, or scripting projects.
+                    </p>
+                    <footer class="project-footer">
+                        <span>C++</span>
+                        <span>Networking</span>
+                        <span>Bash</span>
+                    </footer>
+                </article>
+
+                <article class="project-card fade-in">
+                    <div class="project-top">
+                        <i class="fas fa-folder-open project-folder"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Project Title</h3>
+                    <p class="project-desc">
+                        A third notable project. Academic research, personal tools, or anything
+                        else worth showcasing.
+                    </p>
+                    <footer class="project-footer">
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>HTML/CSS</span>
+                    </footer>
+                </article>
+
+            </div>
+
+            <div class="projects-more fade-in">
+                <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    More on GitHub &nbsp;<i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Designed &amp; Built by <span class="accent">William Freeman</span></p>
+        <p class="footer-sub">
+            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            &nbsp;&copy; <span id="year"></span>
+        </p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Floating Contact Button (SMS Icon) -->
-    <div class="floating-contact-button">
-        <i class="fas fa-comment"></i> <!-- Font Awesome SMS Icon -->
-    </div>
-
-    <!-- Floating Contact Form (Initially hidden) -->
-    <div class="floating-contact-form">
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
-        <script>
-            document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://example.com/youraccounthandle" target="_blank" rel="noopener noreferrer">Placeholder</a>
-        </div>
-    </footer>
-    
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -3,61 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - William Freeman</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="About William Freeman — Cybersecurity Student at the University of Oklahoma">
+    <title>About — William Freeman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/index.html#home">Home</a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/portfolio.html">Portfolio</a>
-            <a href="/pages/resume.html">Resume</a>
-            <a href="/pages/testimonials.html">Testimonials</a>
-            <a href="/pages/contact.html">Contact</a>
+
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="../index.html" class="nav-logo">WF</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html#about"    class="nav-link">About</a></li>
+                <li><a href="../index.html#skills"   class="nav-link">Skills</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="resume.html"            class="nav-link">Resume</a></li>
+                <li><a href="contact.html"           class="nav-link">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Brief introduction and skills.</p>
-    </section>
+    <main class="page-wrapper">
+        <div class="container page-section">
+            <h1 class="section-title fade-in">
+                <span class="section-num">01.</span> About Me
+            </h1>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 16 12 8 18 16"></polyline>
-        </svg>
+            <div class="about-grid fade-in">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm <span class="accent">William Freeman</span>, a cybersecurity student at
+                        the <span class="accent">University of Oklahoma</span>. As a
+                        <span class="accent">McNair Scholar</span>, I'm committed to academic excellence
+                        and independent research, with a particular focus on the field of information security.
+                    </p>
+                    <p>
+                        My interest in cybersecurity grew from a simple curiosity about how systems work — and
+                        how they can fail. That curiosity has driven me to develop strong foundations in
+                        programming, networking, and security principles.
+                    </p>
+                    <p>
+                        I approach every problem with a learner mindset, strong initiative, and a
+                        commitment to building things the right way. Outside of coursework, I enjoy
+                        working on personal projects, participating in competitions, and staying
+                        current with the security landscape.
+                    </p>
+                    <p>Technologies I work with:</p>
+                    <ul class="tech-list">
+                        <li>Python</li>
+                        <li>C / C++</li>
+                        <li>Bash / Shell</li>
+                        <li>SQL</li>
+                        <li>HTML &amp; CSS</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="about-image-container">
+                        <img src="../assets/img/headshot.jpg" alt="William Freeman" class="about-img">
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 70px;">
+                <h2 class="section-title fade-in" style="margin-bottom: 30px;">
+                    Education &amp; Honors
+                </h2>
+                <div class="skills-grid fade-in" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-university"></i></div>
+                        <h3>University of Oklahoma</h3>
+                        <ul>
+                            <li>B.S. Cybersecurity (In Progress)</li>
+                            <li>McNair Scholar</li>
+                            <li>Norman, OK</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-award"></i></div>
+                        <h3>McNair Scholars Program</h3>
+                        <ul>
+                            <li>Federal TRIO program</li>
+                            <li>Undergraduate research preparation</li>
+                            <li>Graduate school readiness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>Designed &amp; Built by <span class="accent">William Freeman</span></p>
+        <p class="footer-sub">
+            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            &nbsp;&copy; <span id="year"></span>
+        </p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Floating Contact Button (SMS Icon) -->
-    <div class="floating-contact-button">
-        <i class="fas fa-comment"></i> <!-- Font Awesome SMS Icon -->
-    </div>
-
-    <!-- Floating Contact Form (Initially hidden) -->
-    <div class="floating-contact-form">
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="year"></span> William Freeman. All rights reserved.</p>
-        <script>
-            document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/william-freeman-2605411b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/usernamesarehardman" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://example.com/youraccounthandle" target="_blank" rel="noopener noreferrer">Placeholder</a>
-        </div>
-    </footer>
-    <!--<script src="/assets/js/main.js"></script>-->
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
